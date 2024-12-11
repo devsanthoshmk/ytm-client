@@ -3,6 +3,7 @@ from flask import Flask,request,send_from_directory,jsonify
 import YoutubeMusicAPI as yt
 from ytdlp import make_playable as audio
 
+
 app=Flask(__name__,static_folder="assets",template_folder="")
 
 
@@ -27,4 +28,4 @@ def song_link():
     return jsonify(audio(song_name))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5005, debug=True)
